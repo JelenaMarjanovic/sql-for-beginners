@@ -1,5 +1,6 @@
 SHOW DATABASES;
 
+-- Create Coffee Store Database
 CREATE DATABASE coffee_store;
 
 USE coffee_store;
@@ -28,3 +29,12 @@ CREATE TABLE orders(
 );
 
 SHOW TABLES;
+
+-- Modifying Tables: Adding and Removing Columns
+SELECT * FROM products;
+
+ALTER TABLE products
+ADD COLUMN coffee_origin VARCHAR(30);
+
+ALTER TABLE products
+DROP COLUMN coffee_origin;
