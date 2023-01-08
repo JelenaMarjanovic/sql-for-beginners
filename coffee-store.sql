@@ -57,3 +57,21 @@ DROP TABLE test;
 
 SELECT * FROM test;
 SHOW TABLES;
+
+-- Truncating Tables
+CREATE TABLE test(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30),
+    age INT
+);
+
+SELECT * FROM test;
+
+INSERT INTO test (name, age)
+VALUES ('Ben', 19), ('Simon', 28), ('Claire', 23);
+
+SELECT * FROM test;
+
+TRUNCATE TABLE test;
+
+SELECT * FROM test;
