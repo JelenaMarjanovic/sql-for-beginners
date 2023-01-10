@@ -24,3 +24,22 @@ CREATE TABLE pets(
 );
 
 SHOW TABLES;
+
+-- Add and remove primary key
+DESCRIBE addresses;
+DESCRIBE people;
+DESCRIBE pets;
+
+-- Add primary key to a table
+ALTER TABLE addresses
+ADD PRIMARY KEY (id);
+
+ALTER TABLE people
+ADD PRIMARY KEY (id);
+
+ALTER TABLE pets
+ADD PRIMARY KEY (id);
+
+-- Remove primary key from a table
+ALTER TABLE addresses
+DROP PRIMARY KEY;
