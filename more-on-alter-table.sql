@@ -43,3 +43,21 @@ ADD PRIMARY KEY (id);
 -- Remove primary key from a table
 ALTER TABLE addresses
 DROP PRIMARY KEY;
+
+-- Add and remove foreign key
+DESCRIBE addresses;
+DESCRIBE people;
+DESCRIBE pets;
+
+-- Add a foreign key to a table
+ALTER TABLE people
+ADD CONSTRAINT FK_PeopleAddress
+FOREIGN KEY (address_id) REFERENCES addresses(id);
+
+ALTER TABLE pets
+ADD CONSTRAINT FK_PetsOwner
+FOREIGN KEY (owner_id) REFERENCES people(id);
+
+-- Remove a foreign key from a table
+ALTER TABLE people
+DROP FOREIGN KEY FK_PeopleAddress;
