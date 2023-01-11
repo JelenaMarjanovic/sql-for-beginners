@@ -69,3 +69,8 @@ ADD CONSTRAINT u_species UNIQUE (species);
 -- Remove a unique constraint from a column
 ALTER TABLE pets
 DROP INDEX u_species;
+
+-- Change column name
+ALTER TABLE pets CHANGE `species` `animal_type` VARCHAR(20);
+ALTER TABLE pets CHANGE `animal_type` `species` VARCHAR(20);
+DESCRIBE pets;
