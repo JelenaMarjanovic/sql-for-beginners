@@ -74,3 +74,10 @@ DROP INDEX u_species;
 ALTER TABLE pets CHANGE `species` `animal_type` VARCHAR(20);
 ALTER TABLE pets CHANGE `animal_type` `species` VARCHAR(20);
 DESCRIBE pets;
+
+-- Change column data type
+ALTER TABLE addresses MODIFY city VARCHAR(30);
+ALTER TABLE addresses MODIFY city CHAR(25);
+ALTER TABLE addresses MODIFY city INT;
+ALTER TABLE addresses MODIFY city VARCHAR(20);
+DESCRIBE addresses;
