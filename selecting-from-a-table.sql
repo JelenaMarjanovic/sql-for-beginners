@@ -49,3 +49,11 @@ WHERE phone_number IS NULL;
 -- Retrieve rows where some column value is not (equal to) NULL
 SELECT * FROM customers
 WHERE phone_number IS NOT NULL;
+
+-- Retrieve rows where a column can be equal to two or more values
+SELECT * FROM customers
+WHERE last_name IN ('Taylor', 'Bluth', 'Armstrong');
+
+-- Exclude multiple values from our results
+SELECT * FROM customers
+WHERE first_name NOT IN ('Katie', 'John', 'George');
