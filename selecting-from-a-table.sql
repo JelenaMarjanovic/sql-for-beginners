@@ -38,3 +38,14 @@ SELECT * FROM products
 WHERE price > 3.00;
 SELECT * FROM products
 WHERE price <= 3.00;
+
+
+SELECT * FROM customers;
+
+-- Retrieve rows where some column value is (equal to) NULL
+SELECT * FROM customers
+WHERE phone_number IS NULL;
+
+-- Retrieve rows where some column value is not (equal to) NULL
+SELECT * FROM customers
+WHERE phone_number IS NOT NULL;
