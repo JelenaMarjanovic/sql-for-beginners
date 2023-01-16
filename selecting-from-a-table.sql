@@ -71,7 +71,7 @@ WHERE customer_id BETWEEN 5 AND 10;
 SELECT * FROM customers
 WHERE last_name BETWEEN 'A' AND 'L';
 
-
+-- Pattern matching
 /*
 		% - any number of characters
 		_- just one character
@@ -87,3 +87,24 @@ WHERE first_name LIKE '_o_';
 
 SELECT * FROM products
 WHERE price LIKE '3%';
+
+-- Ordering data
+SELECT * FROM products
+ORDER BY price ASC;
+
+SELECT * FROM products
+ORDER BY price DESC;
+
+SELECT * FROM customers
+ORDER BY last_name ASC;
+
+SELECT * FROM customers
+ORDER BY last_name DESC;
+
+SELECT * FROM orders
+WHERE customer_id = 1
+ORDER BY order_time ASC;
+
+SELECT * FROM orders
+WHERE customer_id = 1
+ORDER BY order_time DESC;
