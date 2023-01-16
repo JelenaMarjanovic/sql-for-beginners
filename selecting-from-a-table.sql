@@ -70,3 +70,20 @@ WHERE customer_id BETWEEN 5 AND 10;
 
 SELECT * FROM customers
 WHERE last_name BETWEEN 'A' AND 'L';
+
+
+/*
+		% - any number of characters
+		_- just one character
+*/
+SELECT * FROM customers
+WHERE last_name LIKE 'W%';
+
+SELECT * FROM customers
+WHERE last_name LIKE '%o%';
+
+SELECT * FROM customers
+WHERE first_name LIKE '_o_';
+
+SELECT * FROM products
+WHERE price LIKE '3%';
