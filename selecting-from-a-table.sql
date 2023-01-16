@@ -50,6 +50,7 @@ WHERE phone_number IS NULL;
 SELECT * FROM customers
 WHERE phone_number IS NOT NULL;
 
+
 -- Retrieve rows where a column can be equal to two or more values
 SELECT * FROM customers
 WHERE last_name IN ('Taylor', 'Bluth', 'Armstrong');
@@ -57,6 +58,7 @@ WHERE last_name IN ('Taylor', 'Bluth', 'Armstrong');
 -- Exclude multiple values from our results
 SELECT * FROM customers
 WHERE first_name NOT IN ('Katie', 'John', 'George');
+
 
 -- Retrieve rows where certain data is between 2 values
 SELECT * FROM orders;
@@ -70,6 +72,7 @@ WHERE customer_id BETWEEN 5 AND 10;
 
 SELECT * FROM customers
 WHERE last_name BETWEEN 'A' AND 'L';
+
 
 -- Pattern matching
 /*
@@ -87,6 +90,7 @@ WHERE first_name LIKE '_o_';
 
 SELECT * FROM products
 WHERE price LIKE '3%';
+
 
 -- Ordering data
 SELECT * FROM products
@@ -108,3 +112,13 @@ ORDER BY order_time ASC;
 SELECT * FROM orders
 WHERE customer_id = 1
 ORDER BY order_time DESC;
+
+
+-- Distinct values
+SELECT DISTINCT coffee_origin FROM products;
+
+SELECT DISTINCT customer_id FROM orders
+WHERE order_time BETWEEN '2017-02-01' AND '2017-02-28';
+
+SELECT DISTINCT customer_id, product_id FROM orders
+WHERE order_time BETWEEN '2017-02-01' AND '2017-02-28';
