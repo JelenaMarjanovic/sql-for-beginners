@@ -122,3 +122,15 @@ WHERE order_time BETWEEN '2017-02-01' AND '2017-02-28';
 
 SELECT DISTINCT customer_id, product_id FROM orders
 WHERE order_time BETWEEN '2017-02-01' AND '2017-02-28';
+
+
+-- Limiting the number of rows returned in our result set
+SELECT * FROM customers
+LIMIT 5;
+
+SELECT * FROM customers
+LIMIT 10 OFFSET 5;
+
+SELECT * FROM customers
+ORDER BY last_name
+LIMIT 10;
