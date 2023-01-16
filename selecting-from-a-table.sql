@@ -134,3 +134,9 @@ LIMIT 10 OFFSET 5;
 SELECT * FROM customers
 ORDER BY last_name
 LIMIT 10;
+
+
+-- Column name aliases
+SELECT name AS coffee, price, coffee_origin AS country FROM products;
+
+SELECT * FROM products;
