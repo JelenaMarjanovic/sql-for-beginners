@@ -55,3 +55,24 @@ SELECT o.id, c.phone_number, c.last_name, o.order_time FROM orders o
 RIGHT JOIN customers c ON o.customer_id = c.id
 ORDER BY o.order_time
 LIMIT 10;
+
+
+-- Joining more than two tables
+SELECT * FROM products;
+SELECT * FROM customers;
+SELECT * FROM orders;
+
+SELECT p.name, p.price, c.first_name, c.last_name, o.order_time FROM orders o
+JOIN products p ON o.product_id = p.id
+JOIN customers c ON o.customer_id = c.id;
+
+-- Alternative
+SELECT p.name, p.price, c.first_name, c.last_name, o.order_time FROM products p
+JOIN orders o ON p.id = o.product_id
+JOIN customers c ON c.id = o.customer_id;
+
+SELECT p.name, p.price, c.first_name, c.last_name, o.order_time FROM orders o
+JOIN products p ON o.product_id = p.id
+JOIN customers c ON o.customer_id = c.id
+WHERE c.last_name = 'Martin'
+ORDER BY o.order_time;
