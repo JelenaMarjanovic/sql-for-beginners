@@ -15,10 +15,18 @@ CREATE TABLE customers (
     email VARCHAR(45) NOT NULL UNIQUE
 );
 
+CREATE TABLE rooms (
+		id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(45) NOT NULL,
+    no_seats INT NOT NULL
+);
+
 SHOW TABLES;
 
 DESCRIBE films;
 DESCRIBE customers;
+DESCRIBE rooms;
 
 SELECT * FROM films;
 SELECT * FROM customers;
+SELECT * FROM rooms;
