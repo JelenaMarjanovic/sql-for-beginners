@@ -38,6 +38,14 @@ CREATE TABLE seats (
     FOREIGN KEY (room_id) REFERENCES rooms(id)
 );
 
+CREATE TABLE bookings (
+		id INT PRIMARY KEY AUTO_INCREMENT,
+    screening_id INT NOT NULL,
+    customer_id INT NOT NULL,
+    FOREIGN KEY (screening_id) REFERENCES screenings(id),
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+);
+
 SHOW TABLES;
 
 DESCRIBE films;
@@ -45,9 +53,11 @@ DESCRIBE customers;
 DESCRIBE rooms;
 DESCRIBE screenings;
 DESCRIBE seats;
+DESCRIBE bookings;
 
 SELECT * FROM films;
 SELECT * FROM customers;
 SELECT * FROM rooms;
 SELECT * FROM screenings;
 SELECT * FROM seats;
+SELECT * FROM bookings;
