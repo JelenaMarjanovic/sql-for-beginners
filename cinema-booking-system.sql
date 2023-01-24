@@ -30,14 +30,24 @@ CREATE TABLE screenings (
     FOREIGN KEY (room_id) REFERENCES rooms(id)
 );
 
+CREATE TABLE seats (
+		id INT PRIMARY KEY AUTO_INCREMENT,
+    _row CHAR(1) NOT NULL,
+    number INT NOT NULL,
+    room_id INT NOT NULL,
+    FOREIGN KEY (room_id) REFERENCES rooms(id)
+);
+
 SHOW TABLES;
 
 DESCRIBE films;
 DESCRIBE customers;
 DESCRIBE rooms;
 DESCRIBE screenings;
+DESCRIBE seats;
 
 SELECT * FROM films;
 SELECT * FROM customers;
 SELECT * FROM rooms;
 SELECT * FROM screenings;
+SELECT * FROM seats;
