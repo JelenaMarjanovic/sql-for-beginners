@@ -22,3 +22,11 @@ WHERE id IN
 		(SELECT customer_id FROM bookings
     WHERE screening_id = 1)
 ;
+
+-- Non-correlated subqueries: Part 2 - in FROM clause
+SELECT * FROM reserved_seat;
+
+SELECT MAX(no_seats) FROM
+		(SELECT booking_id, COUNT(seat_id) AS no_seats FROM reserved_seat
+		GROUP BY booking_id)	# derived (temporary) table
+b;
