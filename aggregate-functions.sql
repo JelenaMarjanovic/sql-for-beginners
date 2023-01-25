@@ -33,3 +33,11 @@ SELECT MAX(length_min) FROM films;
 
 -- Min length - the shortest film that we're showing in our cinema
 SELECT MIN(length_min) FROM films;
+
+
+-- Average length of all the films that we're showing
+SELECT AVG(length_min) FROM films;
+
+-- Avg using WHERE clause
+SELECT AVG(length_min) FROM films
+WHERE length_min > 120;
