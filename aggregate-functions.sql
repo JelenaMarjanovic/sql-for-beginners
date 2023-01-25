@@ -59,3 +59,9 @@ JOIN screenings s ON s.id = b.screening_id
 JOIN films f ON f.id = s.film_id
 GROUP BY f.name, s.start_time, c.first_name, c.last_name
 ORDER BY s.start_time;
+
+
+-- Having clause
+SELECT customer_id, screening_id, COUNT(id) FROM bookings
+GROUP BY customer_id, screening_id
+HAVING customer_id = 10;
