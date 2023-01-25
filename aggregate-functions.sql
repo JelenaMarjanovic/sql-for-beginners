@@ -24,3 +24,12 @@ SELECT SUM(no_seats) FROM rooms;
 -- Sum using WHERE clause
 SELECT SUM(no_seats) FROM rooms
 WHERE id > 1;
+
+
+SELECT * FROM films;
+
+-- Max length - the longest film that we're showing in our cinema
+SELECT MAX(length_min) FROM films;
+
+-- Min length - the shortest film that we're showing in our cinema
+SELECT MIN(length_min) FROM films;
