@@ -41,3 +41,21 @@ SELECT AVG(length_min) FROM films;
 -- Avg using WHERE clause
 SELECT AVG(length_min) FROM films
 WHERE length_min > 120;
+
+
+SELECT * FROM bookings;
+
+-- Grouping data
+-- Number of bookings per person
+SELECT customer_id, COUNT(id) FROM bookings
+GROUP BY customer_id;	# all columns from SELECT must be here as well
+-- Number of bookings per person and screening
+SELECT customer_id, screening_id, COUNT(id) FROM bookings
+GROUP BY customer_id, screening_id;
+
+SELECT f.name, s.start_time, c.first_name, c.last_name, COUNT(b.id) FROM bookings b
+JOIN customers c ON c.id = b.customer_id
+JOIN screenings s ON s.id = b.screening_id
+JOIN films f ON f.id = s.film_id
+GROUP BY f.name, s.start_time, c.first_name, c.last_name
+ORDER BY s.start_time;
