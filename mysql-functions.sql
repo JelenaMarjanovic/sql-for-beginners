@@ -23,3 +23,17 @@ SELECT name FROM rooms;
 
 SELECT UPPER(name) AS uppercase_name FROM rooms;
 SELECT LOWER(name) AS lowercase_name FROM rooms;
+
+
+-- DATE FUNCTIONS
+
+-- 	Date function
+SELECT DATE('2018-06-05');
+SELECT DATE('2018-06-05 07:45:32');
+
+SELECT DATE(start_time) AS date FROM screenings;
+
+SELECT * FROM screenings
+WHERE DATE(start_time) = '2017-10-03';
+SELECT * FROM screenings
+WHERE DATE(start_time) BETWEEN '2017-10-03' AND '2017-10-05';
