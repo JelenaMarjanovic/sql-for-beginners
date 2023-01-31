@@ -46,3 +46,12 @@ SELECT MONTH(start_time) AS month FROM screenings;
 
 SELECT * FROM screenings
 WHERE MONTH(start_time) = '10';
+
+-- Year function
+SELECT YEAR('2018-06-05');
+SELECT YEAR('2018-06-05 07:45:32');
+
+SELECT YEAR(start_time) AS year FROM screenings;
+
+SELECT * FROM screenings
+WHERE YEAR(start_time) = '2017';
