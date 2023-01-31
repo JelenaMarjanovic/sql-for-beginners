@@ -35,3 +35,6 @@ WHERE r.name = 'Chaplin'
 GROUP BY f.name
 ORDER BY no_screenings DESC
 LIMIT 1;
+
+-- 6. How many of the customers made a booking in October 2017?
+SELECT COUNT(DISTINCT(customer_id)) AS num_of_customers FROM bookings;
