@@ -26,3 +26,12 @@ JOIN customers c ON c.id = b.customer_id
 GROUP BY c.first_name, c.last_name
 ORDER BY no_bookings DESC
 LIMIT 5;
+
+-- 5. Which film was shown in the Chaplin room most often in October 2017?
+SELECT f.name, COUNT(r.name) AS no_screenings FROM screenings s
+JOIN films f ON f.id = s.film_id
+JOIN rooms r ON r.id = s.room_id
+WHERE r.name = 'Chaplin'
+GROUP BY f.name
+ORDER BY no_screenings DESC
+LIMIT 1;
